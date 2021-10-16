@@ -7,7 +7,7 @@ https://www.station-i.de/stai/
 Required configuration:
 * Publish network port via `-p 1999:1999`
 * Bind mounting a host plot dir in the container to `/plots`  (e.g. `-v /path/to/hdd/storage/:/plots`)
-* Bind mounting a host config dir in the container to `/root/.staicoin-blockchain`  (e.g. `-v /path/to/storage/:/root/.staicoin-blockchain`)
+* Bind mounting a host config dir in the container to `/root/.staicoin`  (e.g. `-v /path/to/storage/:/root/.staicoin`)
 * Set initial `staicoin keys add` method:
   * Manual input from docker shell via `-e KEYS=type` (recommended)
   * Copy from existing farmer via `-e KEYS=copy` and `-e CA=/path/to/mainnet/config/ssl/ca/` 
