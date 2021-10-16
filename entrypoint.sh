@@ -23,7 +23,7 @@ if [[ $(staicoin keys show | wc -l) -lt 5 ]]; then
       staicoin init && staicoin keys add -f ${keys}
     fi
     
-    sed -i 's/localhost/127.0.0.1/g' ~/.staicoin-blockchain/mainnet/config/config.yaml
+    sed -i 's/localhost/127.0.0.1/g' ~/.staicoin/mainnet/config/config.yaml
 else
     for p in ${plots_dir//:/ }; do
         mkdir -p ${p}
