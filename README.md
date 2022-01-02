@@ -8,6 +8,7 @@ Required configuration:
 * Publish network port via `-p 1999:1999`
 * Bind mounting a host plot dir in the container to `/plots`  (e.g. `-v /path/to/hdd/storage/:/plots`)
 * Bind mounting a host config dir in the container to `/root/.stai`  (e.g. `-v /path/to/storage/:/root/.stai`)
+* Bind mounting a host config dir in the container to `/root/.stai_keys`  (e.g. `-v /path/to/storage/:/root/.stai_keys`)
 * Set initial `stai keys add` method:
   * Manual input from docker shell via `-e KEYS=type` (recommended)
   * Copy from existing farmer via `-e KEYS=copy` and `-e CA=/path/to/mainnet/config/ssl/ca/` 
