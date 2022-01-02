@@ -7,8 +7,8 @@ https://www.station-i.de/stai/
 Required configuration:
 * Publish network port via `-p 1999:1999`
 * Bind mounting a host plot dir in the container to `/plots`  (e.g. `-v /path/to/hdd/storage/:/plots`)
-* Bind mounting a host config dir in the container to `/root/.staicoin`  (e.g. `-v /path/to/storage/:/root/.staicoin`)
-* Set initial `staicoin keys add` method:
+* Bind mounting a host config dir in the container to `/root/.stai`  (e.g. `-v /path/to/storage/:/root/.stai`)
+* Set initial `stai keys add` method:
   * Manual input from docker shell via `-e KEYS=type` (recommended)
   * Copy from existing farmer via `-e KEYS=copy` and `-e CA=/path/to/mainnet/config/ssl/ca/` 
   * Add key from mnemonic text file via `-e KEYS=/path/to/mnemonic.txt`
@@ -20,14 +20,14 @@ Optional configuration:
 
 On first start with recommended `-e KEYS=type`:
 * Open docker shell `docker exec -it <containerid> sh`
-* Enter `staicoin keys add`
+* Enter `stai keys add`
 * Paste space-separated mnemonic words
 * Restart docker cotainer
-* Enter `staicoin wallet show`
+* Enter `stai wallet show`
 * Press `S` to skip restore from backup
 
 ## Operation
 * Open docker shell `docker exec -it <containerid> sh`
-* Check synchronization `staicoin show -s -c`
-* Check farming `staicoin farm summary`
-* Check balance `staicoin wallet show` 
+* Check synchronization `stai show -s -c`
+* Check farming `stai farm summary`
+* Check balance `stai wallet show` 

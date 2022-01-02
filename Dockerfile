@@ -14,14 +14,14 @@ ENV full_node_port="null"
 RUN apt-get update \
  && apt-get install -y tzdata ca-certificates git lsb-release sudo nano
 
-RUN git clone --branch ${BRANCH} https://github.com/STATION-I/staicoin-blockchain.git --recurse-submodules \
- && cd staicoin-blockchain \
+RUN git clone --branch ${BRANCH} https://github.com/STATION-I/stai-blockchain.git --recurse-submodules \
+ && cd stai-blockchain \
  && chmod +x install.sh && ./install.sh
 
-ENV PATH=/staicoin-blockchain/venv/bin/:$PATH
+ENV PATH=/stai-blockchain/venv/bin/:$PATH
 
 EXPOSE 1999
-WORKDIR /staicoin-blockchain
+WORKDIR /stai-blockchain
 
 COPY ./entrypoint.sh entrypoint.sh
 ENTRYPOINT ["bash", "./entrypoint.sh"]
